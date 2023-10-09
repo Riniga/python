@@ -5,3 +5,6 @@ scipy
 seaborn
 fpdf
 flask
+pandera
+scikit-learn
+pandas-profiling
