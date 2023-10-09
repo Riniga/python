@@ -1,0 +1,17 @@
+[
+    {"Carname": "BMW", "Color": "red", "Age": 5, "Speed": 99, "AutoPass": true}, 
+    {"Carname": "Volvo", "Color": "black", "Age": 7, "Speed": 86, "AutoPass": true}, 
+    {"Carname": "VW", "Color": "gray", "Age": 8, "Speed": 87, "AutoPass": false}, 
+    {"Carname": "VW", "Color": "white", "Age": 7, "Speed": 88, "AutoPass": true}, 
+    {"Carname": "Ford", "Color": "white", "Age": 2, "Speed": 111, "AutoPass": true}, 
+    {"Carname": "VW", "Color": "white", "Age": 17, "Speed": 86, "AutoPass": true}, 
+    {"Carname": "Tesla", "Color": "red", "Age": 2, "Speed": 103, "AutoPass": true}, 
+    {"Carname": "BMW", "Color": "black", "Age": 9, "Speed": 87, "AutoPass": true}, 
+    {"Carname": "Volvo", "Color": "gray", "Age": 4, "Speed": 94, "AutoPass": false}, 
+    {"Carname": "Ford", "Color": "white", "Age": 11, "Speed": 78, "AutoPass": false}, 
+    {"Carname": "Toyota", "Color": "gray", "Age": 12, "Speed": 77, "AutoPass": false}, 
+    {"Carname": "VW", "Color": "white", "Age": 9, "Speed": 85, "AutoPass": false}, 
+    {"Carname": "Toyota", "Color": "blue", "Age": 6, "Speed": 86, "AutoPass": true}
+]
+
+

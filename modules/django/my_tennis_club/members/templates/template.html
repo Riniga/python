@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+    <title>{% block title %}{% endblock %}</title>
+  </head>
+  <body>
+    <main class="container">
+        {% for x in fruits %}
+          <h1>{{ x }}</h1>
+        {% endfor %}
+
+        <p>In views.py you can see what the fruits variable looks like.</p>
+    </main>
+    
+  </body>
+</html>
