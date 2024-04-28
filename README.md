@@ -7,9 +7,10 @@ py -m pip install --user virtualenv
 python -m venv <name>
 .\<name>\Scripts\activate
 
-## Install packages (pip)
-Install/Uppgrade pip: python.exe -m pip install --upgrade pip
+## Manage packages packages (pip)
 List installed packages: pip list 
+
+
 
 ## Virtual environment for machine learning
 py -m venv machinelearning -r requirements.txt

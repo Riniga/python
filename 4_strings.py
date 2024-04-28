@@ -32,3 +32,7 @@ print("%.2f" % 12345.9876)
 txt = "We are the so-called \"Vikings\" from the north."
 escape = " \", \', \\, \n, \r, \t,  \b \f \157 \xf0  " 
 print(escape);
+
+txt = "We are the so-called \"Vikings\" from the north."
+#txt[start:end:step]
+print(txt[2:-1])
