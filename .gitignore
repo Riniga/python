@@ -161,3 +161,5 @@ cython_debug/
 
 concepts/machinelearning/data/nyc_yellow_taxi_trip_records_from_Jan_to_Aug_2023.csv
 concepts/machinelearning/data/nyc_yellow_taxi_trip_selection.csv
+concepts/visualize/data/*
+concepts/visualize/ad.txt
