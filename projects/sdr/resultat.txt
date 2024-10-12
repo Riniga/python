@@ -1,0 +1,598 @@
+-;-;Dir;Lådsamling nr 1 vid infarten till Första Tvärgatan
+sommarstuga;0001;BR;BR Klitterbyg 1
+sommarstuga;0002;BR;BR Klitterbyg 3
+sommarstuga;0003;BR;BR Klitterbyg 5
+sommarstuga;0004;BR;BR Klitterbyg 7
+sommarstuga;0005;BR;BR Klitterbyg 9
+sommarstuga;0006;BR;BR Första Tvärg 1
+villa;0007;BR;R Första Tvärg 3
+sommarstuga;0008;BR;BR Första Tvärg 5
+sommarstuga;0009;BR;BR Första Tvärg 7
+sommarstuga;0010;BR;BR Första Tvärg 9
+sommarstuga;0011;BR;BR Första Tvärg 11
+sommarstuga;0012;BR;BR Första Tvärg 13
+sommarstuga;0013;BR;BR Första Tvärg 2
+sommarstuga;0014;BR;BR Första Tvärg 4
+sommarstuga;0015;BR;BR Första Tvärg 6
+sommarstuga;0016;BR;BR Första Tvärg 8
+sommarstuga;0017;BR;BR Första Tvärg 10
+villa;0018;BR;R Första Tvärg 12
+-;-;Dir;Lådsamling nr 2 vid infarten till Andra Tvärgatan
+sommarstuga;0019;BR;BR Råbockav 42
+sommarstuga;0020;BR;BR Klitterbyg 11
+villa;0021;BR;R Klitterbyg 13
+sommarstuga;0022;BR;BR Klitterbyg 15
+sommarstuga;0023;BR;BR Andra Tvärg 1
+sommarstuga;0024;BR;BR Andra Tvärg 3
+sommarstuga;0025;BR;BR Andra Tvärg 5
+sommarstuga;0026;BR;BR Andra Tvärg 7
+villa;0027;BR;R Andra Tvärg 9
+sommarstuga;0028;BR;BR Andra Tvärg 11
+sommarstuga;0029;BR;BR Andra Tvärg 2
+sommarstuga;0030;BR;BR Andra Tvärg 4
+villa;0031;BR;R Andra Tvärg 6
+villa;0032;BR;R Andra Tvärg 8
+sommarstuga;0033;BR;BR Andra Tvärg 10
+sommarstuga;0034;BR;BR Andra Tvärg 12
+-;-;Dir;Lådsamling nr 3 vid infarten till Fjärde Tvärgatan
+villa;0035;BR;R Fjärde Tvärg 1
+sommarstuga;0036;BR;BR Fjärde Tvärg 3
+sommarstuga;0037;BR;BR Fjärde Tvärg 5
+villa;0038;BR;R Fjärde Tvärg 7
+villa;0039;BR;R Fjärde Tvärg 9
+sommarstuga;0040;BR;BR Fjärde Tvärg 11
+villa;0041;BR;R Klitterbyg 21
+sommarstuga;0041;BR;BR Klitterbyg 23
+sommarstuga;0041;BR;BR Klitterbyg 25
+villa;0041;BR;R Klitterbyg 27
+sommarstuga;0041;BR;BR Klitterbyg 29
+villa;0041;BR;R Tredje Tvärg 10
+sommarstuga;0042;BR;BR Fjärde Tvärg 2
+sommarstuga;0043;BR;BR Fjärde Tvärg 4
+sommarstuga;0044;BR;BR Fjärde Tvärg 6
+sommarstuga;0045;BR;BR Fjärde Tvärg 8
+sommarstuga;0046;BR;BR Fjärde Tvärg 10
+sommarstuga;0047;BR;BR Fjärde Tvärg 12
+sommarstuga;0048;BR;BR Klitterbyg 28
+-;-;Dir;Lådsamling nr 4 vid infarten till Femte Tvärgatan
+sommarstuga;0049;BR;BR Klitterbyg 31
+sommarstuga;0050;BR;BR Klitterbyg 33
+sommarstuga;0051;BR;BR Klitterbyg 35
+sommarstuga;0052;BR;BR Klitterbyg 37
+sommarstuga;0053;BR;BR Klitterbyg 39
+sommarstuga;0054;BR;BR Klitterbyg 41
+sommarstuga;0055;BR;BR Femte Tvärg 1
+sommarstuga;0056;BR;BR Femte Tvärg 3
+sommarstuga;0057;BR;BR Femte Tvärg 5
+villa;0058;BR;R Femte Tvärg 7
+sommarstuga;0059;BR;BR Femte Tvärg 9
+sommarstuga;0060;BR;BR Femte Tvärg 11
+sommarstuga;0061;BR;BR Femte Tvärg 2
+sommarstuga;0062;BR;BR Femte Tvärg 4
+sommarstuga;0063;BR;BR Femte Tvärg 6
+sommarstuga;0064;BR;BR Femte Tvärg 8
+villa;0065;BR;R Femte Tvärg 10
+sommarstuga;0066;BR;BR Femte Tvärg 12
+-;-;Dir;Lådsamling nr 5 vid infarten till Sjätte Tvärgatan
+sommarstuga;0067;BR;BR Klitterbyg 43
+sommarstuga;0068;BR;BR Klitterbyg 45
+sommarstuga;0069;BR;BR Klitterbyg 47
+sommarstuga;0070;BR;BR Klitterbyg 49
+sommarstuga;0071;BR;BR Klitterbyg 51
+-;-;Dir;Sväng höger
+sommarstuga;0072;BR;BR Klitterbyg 50
+villa;0073;BR;R Sjätte Tvärg 1
+sommarstuga;0074;BR;BR Sjätte Tvärg 3
+sommarstuga;0075;BR;BR Sjätte Tvärg 5
+villa;0076;BR;R Sjätte Tvärg 7
+sommarstuga;0077;BR;BR Sjätte Tvärg 9
+sommarstuga;0078;BR;BR Sjätte Tvärg 11
+sommarstuga;0079;BR;BR Sjätte Tvärg 13
+sommarstuga;0080;BR;BR Sjätte Tvärg 2
+sommarstuga;0081;BR;BR Sjätte Tvärg 4
+villa;0082;BR;R Sjätte Tvärg 6
+villa;0083;BR;R Sjätte Tvärg 8
+sommarstuga;0084;BR;BR Sjätte Tvärg 10
+villa;0085;BR;R Sjätte Tvärg 12
+-;-;Dir;Lådsamling nr 6 vid infarten till Sjunde Tvärgatan
+sommarstuga;0086;BR;BR Sjunde Tvärg 1
+villa;0087;BR;R Sjunde Tvärg 3
+villa;0088;BR;R Sjunde Tvärg 5
+sommarstuga;0089;BR;BR Sjunde Tvärg 7
+sommarstuga;0090;BR;BR Sjunde Tvärg 9
+sommarstuga;0091;BR;BR Sjunde Tvärg 11
+villa;0092;BR;R Sjunde Tvärg 2
+sommarstuga;0093;BR;BR Sjunde Tvärg 4
+sommarstuga;0094;BR;BR Sjunde Tvärg 6
+sommarstuga;0095;BR;BR Sjunde Tvärg 8
+sommarstuga;0096;BR;BR Sjunde Tvärg 10
+villa;0097;BR;R Sjunde Tvärg 12
+sommarstuga;0098;BR;BR Klitterbyg 53
+sommarstuga;0099;BR;BR Klitterbyg 55
+sommarstuga;0100;BR;BR Klitterbyg 57
+villa;0101;BR;R Klitterbyg 59
+-;-;Dir;Gå ut på Råbockavägen och sväng vänster. Följ vägen till rondellen där du svänger vänster igen. Åk rakt fram cirka 500 meter och sväng sedan höger och höger igen
+villa;0504;;S Kvickv 2
+villa;0505;;S Kvickv 4
+villa;0506;BR;R S Kvickv 6
+villa;0507;;S Kvickv 8
+villa;0508;;S Kvickv 10
+villa;0509;;S Kvickv 12
+villa;0510;;S Kvickv 14
+villa;0511;;S Kvickv 16
+villa;0512;;S Kvickv 18
+villa;0513;;S Kvickv 20
+villa;0514;;S Kvickv 22
+villa;0515;;S Kvickv 24
+villa;0516;;S Kvickv 26
+villa;0517;;S Kvickv 28
+villa;0518;;S Kvickv 30
+villa;0519;;S Kvickv 32
+villa;0520;;S Kvickv 34
+-;-;Dir;Korsa gatan och vänd tillbaka
+villa;0521;;S Kvickv 19
+villa;0522;;S Kvickv 17
+villa;0523;;S Kvickv 15
+villa;0524;;S Kvickv 13
+villa;0525;;S Kvickv 11
+villa;0526;;S Kvickv 9
+villa;0527;;S Kvickv 7
+-;-;Dir;Vänd sen Höger på Annavägen
+villa;0540;BR;R Annav 2
+villa;0542;;Annav 4
+villa;0545;BR;R Annav 6
+villa;0550;BR;R Annav 8
+villa;0555;BR;R Annav 10
+villa;0558;;Annav 12
+-;-;Dir;Höger på Strandbadenvägen
+villa;0560;BR;R Strandbadenv 30
+villa;0565;BR;R Strandbadenv 32
+villa;0570;BR;R Strandbadenv 34
+villa;0575;BR;R Strandbadenv 36
+-;-;Dir;Vänd sen Vänster på Annavägen
+villa;0580;BR;R Annav 17
+villa;0585;BR;R Annav 15
+villa;0590;BR;R Annav 13
+villa;0595;BR;R Annav 11
+villa;0600;BR;R Annav 9
+villa;0605;BR;R Annav 7
+villa;0610;BR;R Annav 5
+villa;0615;BR;R Annav 3
+villa;0620;BR;R Annav 1
+-;-;Dir;Höger på Linfärjevägen
+villa;0625;BR;R Linfärjev 4
+villa;0630;BR;R Linfärjev 6
+villa;0635;BR;R Linfärjev 8
+villa;0640;BR;R Linfärjev 10
+villa;0645;BR;R Linfärjev 12
+-;-;Dir;Höger på Strandbadenvägen
+villa;0650;BR;R Strandbadenv 26
+villa;0655;BR;R Strandbadenv 28
+-;-;Dir;Vänd sen Vänster på Linfärjevägen
+villa;0660;;Linfärjev 17
+villa;0665;;Linfärjev 15
+villa;0670;;Linfärjev 13
+villa;0675;;Linfärjev 11
+villa;0680;;Linfärjev 9
+villa;0685;;Linfärjev 7
+-;-;Dir;Höger på Norra Kvickvägen sen Höger på Fribadenvägen
+villa;0690;;Fribadenv 8
+villa;0695;;Fribadenv 10
+villa;0700;;Fribadenv 12
+villa;0705;;Fribadenv 14
+villa;0710;;Fribadenv 16
+villa;0714;;Strandbadenv 16
+-;-;Dir;Höger på Strandbadenvägen
+villa;0715;;Strandbadenv 18
+villa;0720;;Strandbadenv 20
+villa;0725;;Strandbadenv 22
+villa;0730;;Strandbadenv 24
+-;-;Dir;Vänd sen vänster på Fribadenvägen
+villa;0735;;Fribadenv 21
+villa;0740;;Fribadenv 19
+villa;0745;;Fribadenv 17
+villa;0750;;Fribadenv 15
+villa;0755;;Fribadenv 13
+villa;0760;;Fribadenv 11
+villa;0765;;Fribadenv 9
+villa;0770;;Fribadenv 7
+villa;0775;;Fribadenv 5
+villa;0780;;Fribadenv 3
+villa;0785;;Fribadenv 1
+-;-;Dir;Höger på Norra Kvickvägen, sen höger på Thorvaldsvägen
+villa;0790;;Thorvaldsv 2
+villa;0795;;Thorvaldsv 4
+villa;0800;;Thorvaldsv 6
+villa;0805;;Thorvaldsv 8
+villa;0810;;Thorvaldsv 10
+villa;0815;;Thorvaldsv 12
+villa;0820;;Thorvaldsv 14
+villa;0825;;Thorvaldsv 16
+-;-;Dir;Korsa vägen och vänd tillbaka
+villa;0830;;Thorvaldsv 15
+villa;0835;;Thorvaldsv 13
+villa;0840;;Thorvaldsv 11
+villa;0845;;Thorvaldsv 9
+villa;0850;;Thorvaldsv 7
+villa;0855;;Thorvaldsv 5
+villa;0860;;Thorvaldsv 3
+villa;0865;;Thorvaldsv 1
+-;-;Dir;Höger på Norra Kvickvägen
+villa;0870;;N Kvickv 1
+villa;0875;;N Kvickv 3
+villa;0880;;N Kvickv 5
+villa;0885;;N Kvickv 7
+villa;0890;;N Kvickv 9
+villa;0895;;N Kvickv 11
+-;-;Dir;Korsa gatan
+villa;0900;;N Kvickv 6
+villa;0905;;N Kvickv 8
+villa;0907;;N Kvickv 10
+villa;0910;;N Kvickv 12
+villa;0915;;N Kvickv 14
+villa;0920;;Majav 2
+villa;0925;;Majav 4
+-;-;Dir;Korsa vägen
+villa;0930;;Majav 3
+-;-;Dir;Sväng höger
+villa;0935;;Strandbadenv 10
+villa;0940;;Strandbadenv 12
+-;-;Dir;Vänd tillbaka
+villa;0945;;Strandbadenv 6
+villa;0950;;Strandbadenv 4
+villa;0955;;Strandbadenv 2
+-;-;Dir;Sväng vänster
+villa;0960;;N Kvickv 31
+villa;0963;;N Kvickv 29
+villa;0965;;N Kvickv 27
+villa;0970;;N Kvickv 25
+villa;0975;;N Kvickv 23
+villa;0980;;N Kvickv 21
+villa;0985;;N Kvickv 19
+villa;0990;;N Kvickv 15
+villa;0995;;N Kvickv 14
+villa;1000;;N Kvickv 13
+sommarstuga;1005;; Backstigen 5
+-;-;Dir;Gå tillbaka ut till Havsbadsvägen. Sväng höger. Följ vägen rakt fram och ta höger in på Hemvägen
+sommarstuga;1010;; Hemv 2
+villa;1015;;Hemv 4
+villa;1020;;Hemv 6
+sommarstuga;1025;; Hemv 8
+villa;1030;;Hemv 10
+sommarstuga;1035;; Hemv 12
+villa;1040;;Hemv 14
+sommarstuga;1045;; Hemv 16
+sommarstuga;1050;; Hemv 18
+villa;1055;;Hemv 20
+villa;1060;;Hemv 22
+villa;1065;;Hemv 24
+sommarstuga;1070;; Hemv 26
+villa;1075;;Hemv 28
+villa;1080;;Hemv 30
+villa;1085;;Hemv 32
+villa;1090;;Luntertunv 2
+sommarstuga;1095;; Luntertunv 4
+sommarstuga;1100;; Luntertunv 6
+villa;1105;;Luntertunv 8
+sommarstuga;1110;; Luntertunv 10
+-;-;Dir;Sväng höger ner och dela till de 2 husen runt hörnet. Sen tilbaka till vägen
+sommarstuga;1115;; Ängstigen 4
+sommarstuga;1120;; Ängstigen 6
+villa;1125;;Luntertunv 12
+villa;1130;;Luntertunv 14
+villa;1135;;Luntertunv 16
+-;-;Dir;Sväng höger
+villa;1145;;Saltsjöv 12
+villa;1150;;Saltsjöv 14
+villa;1155;;Saltsjöv 16
+villa;1160;;Saltsjöv 18
+-;-;Dir;Vänd tillbaka
+sommarstuga;1165;; Saltsjöv 11
+villa;1170;;Saltsjöv 9
+villa;1175;;Saltsjöv 7
+villa;1180;;Saltsjöv 5
+villa;1185;;Saltsjöv 3
+-;-;Dir;Sväng höger
+sommarstuga;1190;; Badstigen 4
+sommarstuga;1195;; Badstigen 6
+-;-;Dir;Sväng höger
+villa;1200;;Danska Stigen 7
+sommarstuga;1205;; Danska Stigen 5
+sommarstuga;1210;; Danska Stigen 3
+villa;1215;;Danska Stigen 1
+-;-;Dir;Vänd tillbaka och ta vänster på Saltsjövägen
+villa;1220;;Saltsjöv 2
+sommarstuga;1225;; Saltsjöv 4
+sommarstuga;1230;; Saltsjöv 6
+sommarstuga;1235;; Saltsjöv 8
+villa;1240;;Saltsjöv 10
+sommarstuga;1245;; Sjöstigen 7
+sommarstuga;1250;; Sjöstigen 5
+sommarstuga;1255;; Sjöstigen 3
+villa;1265;;Luntertunv 5
+villa;1270;;Vinterv 19
+villa;1275;;Vinterv 17
+villa;1280;;Vinterv 15
+-;-;Dir;Sväng vänster
+villa;1285;;Tvärstigen 3
+-;-;Dir;Korsa vägen och vänd tillbaka
+villa;1290;;Tvärstigen 4
+-;-;Dir;Sväng vänster
+villa;1295;;Vinterv 13
+villa;1300;;Vinterv 11
+villa;1305;;Vinterv 9
+villa;1310;;Vinterv 5
+villa;1315;;Vinterv 3
+villa;1317;;Vinterv 1
+-;-;Dir;Gå ner till Vintervägen 2. Korsa gatan och vänd tillbaka
+villa;1320;;Vinterv 2
+villa;1325;;Vinterv 4
+villa;1330;;Vinterv 6
+-;-;Dir;Sväng höger
+villa;1335;;Vinterv 8
+-;-;Dir;Korsa vägen och vänd tillbaka. Sväng höger
+villa;1340;;Vinterv 10
+villa;1345;;Vinterv 12
+villa;1350;;Vinterv 14
+villa;1355;;Vinterv 16
+sommarstuga;1360;; Vinterv 18
+villa;1365;;Vinterv 20
+-;-;Dir;Sväng höger
+villa;1370;;Hemv 31
+villa;1375;;Hemv 29
+villa;1380;;Hemv 27
+villa;1385;;Hemv 25
+villa;1390;;Hemv 23
+villa;1395;;Hemv 21
+villa;1400;;Hemv 19
+sommarstuga;1405;; Hemv 17
+villa;1410;;Hemv 15
+villa;1415;;Hemv 13
+villa;1420;;Hemv 11
+villa;1425;;Hemv 9
+villa;1430;;Hemv 7
+villa;1435;;Hemv 5
+villa;1440;;Hemv 3
+sommarstuga;1445;; Hemv 1
+-;-;Dir;Sväng höger sen höger igen
+sommarstuga;1450;; Hasselstigen 8
+villa;1455;;Hasselstigen 10
+sommarstuga;1460;; Hasselstigen 12
+sommarstuga;1465;; Hasselstigen 14
+villa;1470;;Hasselstigen 16
+villa;1475;;Hasselstigen 18
+villa;1480;;Hasselstigen 20
+villa;1485;;Hasselstigen 22
+-;-;Dir;Korsa vägen och vänd tillbaka
+villa;1490;;Hasselstigen 15
+villa;1495;;Hasselstigen 13
+sommarstuga;1500;; Hasselstigen 9
+villa;1505;;Hasselstigen 5
+villa;1510;;Havsbadsv 106
+-;-;Dir;Korsa gatan rakt över. In på Vårvägen
+sommarstuga;1515;; Vårv 2
+sommarstuga;1520;; Vårv 4
+sommarstuga;1525;; Vårv 6
+sommarstuga;1530;; Vårv 8
+villa;1535;;Vårv 10
+villa;1540;;Vårv 12
+villa;1545;;Vårv 14
+villa;1550;;Vårv 16
+-;-;Dir;Korsa vägen och vänd tillbaka
+villa;1555;;Vårv 21
+sommarstuga;1560;; Vårv 19
+villa;1565;;Vårv 17
+-;-;Dir;Sväng höger
+sommarstuga;1570;; Björkstigen 9
+-;-;Dir;Sväng höger
+sommarstuga;1575;; Tallstigen 2
+sommarstuga;1580;; Tallstigen 4
+villa;1585;;Tallstigen 6
+sommarstuga;1590;; Tallstigen 8
+sommarstuga;1595;; Tallstigen 10
+-;-;Dir;Korsa vägen och vänd tillbaka
+villa;1600;;Tallstigen 9
+villa;1605;;Tallstigen 7
+sommarstuga;1610;; Tallstigen 5
+sommarstuga;1615;; Tallstigen 3
+villa;1620;;Tallstigen 1
+-;-;Dir;Rakt över gatan och sväng vänster
+villa;1625;;Björkstigen 6
+villa;1630;;Björkstigen 8
+villa;1635;;Björkstigen 10
+-;-;Dir;Sväng höger
+villa;1640;;Vårv 11
+villa;1645;;Vårv 9
+-;-;Dir;Sväng höger
+sommarstuga;1650;; Jägarestigen 7
+villa;1655;;Jägarestigen 5
+villa;1660;;Jägarestigen 6
+-;-;Dir;KOrsa vägen och vänd tillbaka
+sommarstuga;1665;; Jägarestigen 8
+villa;1670;;Jägarestigen 10
+-;-;Dir;Sväng höger
+sommarstuga;1675;; Vårv 5
+sommarstuga;1680;; Vårv 3
+-;-;Dir;Sväng höger
+villa;1685;;Havsbadsv 107
+villa;1690;;Havsbadsv 105
+villa;1695;;Havsbadsv 103
+-;-;Dir;Sväng höger på Hemvägen.
+villa;1700;;Havsbadsv 102
+-;-;Dir;Sväng höger
+sommarstuga;1705;; Sommarv 4
+sommarstuga;1710;; Sommarv 6
+sommarstuga;1715;; Sommarv 8
+sommarstuga;1720;; Sommarv 10
+sommarstuga;1725;; Sommarv 12
+sommarstuga;1730;; Sommarv 14
+sommarstuga;1735;; Sommarv 16
+sommarstuga;1740;; Sommarv 18
+sommarstuga;1745;; Sommarv 20
+sommarstuga;1750;; Sommarv 22
+-;-;Dir;Korsa vägen och vänd tillbaka
+sommarstuga;1755;; Sommarv 25
+sommarstuga;1760;; Sommarv 23
+sommarstuga;1765;; Sommarv 21
+sommarstuga;1770;; Sommarv 19
+sommarstuga;1775;; Sommarv 17
+villa;1780;;Sommarv 15
+sommarstuga;1785;; Sommarv 13
+sommarstuga;1790;; Sommarv 11
+villa;1795;;Sommarv 9
+sommarstuga;1800;; Sommarv 7
+villa;1805;;Sommarv 5
+sommarstuga;1810;; Sommarv 3
+sommarstuga;1815;; Sommarv 1B
+sommarstuga;1820;; Sommarv 1A
+sommarstuga;1825;; Havsbadsv 111
+sommarstuga;1830;; Havsbadsv 113
+villa;1835;;Havsbadsv 115
+villa;1840;;Havsbadsv 117
+villa;1845;;Havsbadsv 119
+villa;1850;;Havsbadsv 121
+-;-;Dir;Sväng vänster
+sommarstuga;1855;; Björkstigen 15
+villa;1860;;Björkstigen 11
+villa;1865;;Björkst 13
+-;-;Dir;Korsa vägen och vänd tillbaka
+villa;1870;;Björkstigen 14
+sommarstuga;1875;; Björkstigen 16
+-;-;Dir;Sväng vänster
+sommarstuga;1880;; Havsbadsv 123
+villa;1885;;Havsbadsv 125
+villa;1890;;Havsbadsv 127
+sommarstuga;1895;; Havsbadsv 129
+villa;1900;;Havsbadsv 131
+-;-;Dir;Sväng höger. Rakt fram till adress
+villa;1905;;Klitterv 32
+villa;1910;;Klitterv 34
+villa;1915;;Klitterv 38
+villa;1920;;Klitterv 40
+-;-;Dir;Sväng höger
+sommarstuga;1925;; N Villastigen 15
+villa;1930;;N Villastigen 13
+villa;1935;;N Villastigen 11
+sommarstuga;1940;; N Villastigen 9
+villa;1945;;N Villastigen 7
+-;-;Dir;Rakt fram
+villa;1950;;Klitterv 37
+villa;1955;;Klitterv 35
+-;-;Dir;Vänd tillbaka
+sommarstuga;1960;; Klitterv 33
+sommarstuga;1965;; Klitterv 31
+villa;1965;;Sjöstigen 1
+villa;1970;;Sjöstigen 2
+villa;1975;;Sjöstigen 4
+sommarstuga;1980;; Sjöstigen 6
+sommarstuga;1985;; Sjöstigen 8
+villa;1990;;Sjöstigen 10
+-;-;Dir;Sväng höger
+sommarstuga;1995;; Sjöstigen 12
+-;-;Dir;Sväng höger
+sommarstuga;2000;; N Villastigen 3
+villa;2005;;Havsstigen 5
+villa;2010;;Havsstigen 3
+villa;2015;;Havsstigen 1
+-;-;Dir;Sväng vänster. Rakt fram till kurvan där du svänger höger sen höger igen. Vänd längst ner på gatan.
+sommarstuga;2020;; Strandstigen 5
+sommarstuga;2025;; Strandstigen 1
+villa;2029;;Klitterv 25
+-;-;Dir;Sväng höger
+villa;2030;;Klitterv 25A
+sommarstuga;2035;; Klitterv 23
+villa;2040;;Hyttstigen 2
+-;-;Dir;Sväng höger
+sommarstuga;2045;; Hyttstigen 4
+sommarstuga;2050;; Hyttstigen 6A
+sommarstuga;2055;; Hyttstigen 6
+-;-;Dir;Korsa vägen och vänd tillbaka
+sommarstuga;2060;; Hyttstigen 3
+villa;2065;;Hyttstigen 1
+-;-;Dir;Sväng höger
+sommarstuga;2070;; Klitterv 19
+-;-;Dir;Sväng höger
+villa;2075;;V Vårv 8
+-;-;Dir;Korsa vägen och vänd tillbaka
+sommarstuga;2080;; V Vårv 9
+sommarstuga;2085;; Klitterv 17
+-;-;Dir;Sväng höger sen höger igen
+sommarstuga;2090;; Backstigen 2
+sommarstuga;2095;; Backstigen 4
+sommarstuga;2100;; Backstigen 6
+-;-;Dir;Korsa vägen och vänd tillbaka
+sommarstuga;2105;; Backstigen 3
+-;-;Dir;Sväng höger
+sommarstuga;2110;; Klitterv 13
+villa;2115;;Klitterv 11
+-;-;Dir;Sväng höger
+sommarstuga;2120;; Dalstigen 4
+villa;2125;;Dalstigen 6
+-;-;Dir;Korsa vägen och vänd tillbaka
+sommarstuga;2130;; Dalstigen 5
+sommarstuga;2135;; Dalstigen 3
+-;-;Dir;Sväng höger
+sommarstuga;2140;; Klitterv 9
+-;-;Dir;Sväng höger
+villa;2145;;Klitterv 7
+villa;2150;;Klitterv 5A
+villa;2155;;Klitterv 5
+villa;2160;;Sommarv 34
+villa;2165;;Sommarv 29
+sommarstuga;2170;; Sommarv 27
+-;-;Dir;Sväng höger
+villa;2175;;Klitterv 1
+sommarstuga;2180;; Klitterv 3
+-;-;Dir;Sväng höger
+sommarstuga;2185;; Sandstigen 2
+villa;2190;;Sandstigen 4
+-;-;Dir;Vänd tillbaka. Sväng vänster sen höger
+villa;2195;;Klitterv 2J
+sommarstuga;2200;; Klitterv 2I
+sommarstuga;2205;; Klitterv 2H
+sommarstuga;2210;; Klitterv 2G
+villa;2215;;Klitterv 2F
+villa;2220;;Klitterv 2E
+sommarstuga;2225;; Klitterv 2D
+villa;2230;;Klitterv 2C
+sommarstuga;2235;; Klitterv 2B
+sommarstuga;2240;; Klitterv 2A
+villa;2245;;Klitterv 4
+villa;2250;;Klitterv 6
+villa;2255;;Klitterv 8
+sommarstuga;2260;; Klitterv 10
+sommarstuga;2265;; Klitterv 12
+villa;2270;;Klitterv 14
+sommarstuga;2275;; Klitterv 16
+villa;2280;;Klitterv 18
+villa;2285;;Klitterv 20
+villa;2290;;Klitterv 22
+sommarstuga;2295;; Klitterv 24
+sommarstuga;2300;; Klitterv 26
+-;-;Dir;Sväng höger sen höger igen
+sommarstuga;2305;; Villastigen 21
+-;-;Dir;Sväng höger
+sommarstuga;2310;; Fornstigen 2
+-;-;Dir;Korsa gatan och vänd tillbaka
+villa;2315;;Fornstigen 1
+-;-;Dir;Sväng höger
+villa;2320;;Villastigen 15
+-;-;Dir;Sväng höger
+villa;2325;;V Vårv 2
+-;-;Dir;Korsa vägen och vänd tillbaka
+sommarstuga;2330;; V Vårv 5
+sommarstuga;2335;; V Vårv 3
+sommarstuga;2340;; Villastigen 11
+sommarstuga;2345;; Villastigen 9
+-;-;Dir;Sväng vänster
+sommarstuga;2350;; V Tallstigen 2
+villa;2355;;V Tallstigen 4
+villa;2360;;V Tallstigen 6
+-;-;Dir;Korsa vägen och vänd tillbaka
+sommarstuga;2365;; V Tallstigen 5
+villa;2370;;V Tallstigen 3
+sommarstuga;2375;; V Tallstigen 1
+villa;2380;;Villastigen 3
+sommarstuga;2385;; Sommarv 26
+sommarstuga;2390;; Sommarv 28
+sommarstuga;2395;; Sommarv 30
