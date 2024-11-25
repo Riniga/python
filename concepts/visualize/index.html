@@ -45,7 +45,11 @@
                         <span>Intressant att se hur team är "klustrade", man kan tydligt se öar och man kan kanske ana hur interatktioner mellan team ser ut</span><br />
                         <span>Vill du veta vad teamen jobbar med för tjänster, se <a href="service_teams.html">service_teams.html</a> </span>
                         <div class="card" style="width: 100%"><div id="teams_network" class="card-body"></div></div>
-                        <span>Källa: Service Now: Tjänsteportfölj (install_status=820^ORinstall_status=830^u_service_catalog.sys_name=Sweden IT Service Catalog) samt Gruopmedlemmar (groupISNOTEMPTY^user.emailISNOTEMPTY^user.active!=false) : </span><br />                                               
+                        <span>Källa: 
+                          <ul>
+                            <li>Services: Service Now->Tjänsteportfölj (install_status=820^ORinstall_status=830^u_service_catalog.sys_name=Sweden IT Service Catalog)</li>
+                            <li>TeamMembers: Service Now->Gruppmedlemmar (groupISNOTEMPTY^user.emailISNOTEMPTY^user.active!=false)</li>
+                        </span>
                       </div>
                       <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
                         <h1>Visualiserar vilka medarbetare som har befattningar</h1>
@@ -54,14 +58,22 @@
                         <div class="card" style="width: 100%">
                             <div id="titles_network" class="card-body"></div>
                         </div>
-                        <span>Källa: Active Directory</span><br />
+                        <span>Källa: 
+                          <ul>
+                            <li>Users: Active Directory</li>
+                            <li>Groups: Selection from Active Directory (to filter what to display)</li>
+                        </span>
                       </div>
                       <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
                         <h1>Visualiserar medarbetares tillhörighet i olika grupper</h1>
                         <span>Röda noder är grupper (10 stycken) som finns uppsatta i ServiceNow</span>
                         <span>Blå noder är individer (256 stycken) </span><br/>
                         <div class="card" style="width: 100%"><div id="groups_network" class="card-body"></div></div> 
-                        <span>Källa: Active Directory</span><br />
+                        <span>Källa: 
+                          <ul>
+                            <li>Users: Active Directory</li>
+                            <li>Groups: Selection from Active Directory (to filter what to display)</li>
+                        </span>
                       </div>
                       <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">
                         <h1>Visualiserar vilka tjänster som team arbetar med </h1>
@@ -69,6 +81,11 @@
                         <span>Blå noder är tjänster (122 stycken)</span><br/>
                         <span>Vill du veta vilka individer som ingår i teamen, se <a href="team_members.html">team_members.html</a> </span>
                         <div class="card" style="width: 100%"><div id="services_network" class="card-body"></div></div> 
+                        <span>Källa: 
+                          <ul>
+                            <li>TeamMembers: Service Now->Gruppmedlemmar (groupISNOTEMPTY^user.emailISNOTEMPTY^user.active!=false)</li>
+                            <li>Services: Service Now->Tjänsteportfölj (install_status=820^ORinstall_status=830^u_service_catalog.sys_name=Sweden IT Service Catalog)</li>
+                        </span>
                       </div>
                     </div>
                   </div>
