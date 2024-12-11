@@ -1,0 +1,250 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        
+            <script src="lib/bindings/utils.js"></script>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/dist/vis-network.min.css" integrity="sha512-WgxfT5LWjfszlPHXRmBWHkV2eceiWTOBvrKCNbdgDYTHrT2AeLCGbF4sZlZw3UMN3WtL0tGUoIAKsu8mllg/XA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/vis-network.min.js" integrity="sha512-LnvoEWDFrqGHlHmDD2101OrLcbsfkrzoSpvtSQtxK3RMnRV0eOkhhBN2dXHKRrUU8p2DGRTk35n4O8nWSVe1mQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+            
+        
+<center>
+<h1></h1>
+</center>
+
+<!-- <link rel="stylesheet" href="../node_modules/vis/dist/vis.min.css" type="text/css" />
+<script type="text/javascript" src="../node_modules/vis/dist/vis.js"> </script>-->
+        <link
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
+          crossorigin="anonymous"
+        />
+        <script
+          src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+          crossorigin="anonymous"
+        ></script>
+
+
+        <center>
+          <h1></h1>
+        </center>
+        <style type="text/css">
+
+             #mynetwork {
+                 width: 100%;
+                 height: 600px;
+                 background-color: #ffffff;
+                 border: 1px solid lightgray;
+                 position: relative;
+                 float: left;
+             }
+
+             
+             #loadingBar {
+                 position:absolute;
+                 top:0px;
+                 left:0px;
+                 width: 100%;
+                 height: 600px;
+                 background-color:rgba(200,200,200,0.8);
+                 -webkit-transition: all 0.5s ease;
+                 -moz-transition: all 0.5s ease;
+                 -ms-transition: all 0.5s ease;
+                 -o-transition: all 0.5s ease;
+                 transition: all 0.5s ease;
+                 opacity:1;
+             }
+
+             #bar {
+                 position:absolute;
+                 top:0px;
+                 left:0px;
+                 width:20px;
+                 height:20px;
+                 margin:auto auto auto auto;
+                 border-radius:11px;
+                 border:2px solid rgba(30,30,30,0.05);
+                 background: rgb(0, 173, 246); /* Old browsers */
+                 box-shadow: 2px 0px 4px rgba(0,0,0,0.4);
+             }
+
+             #border {
+                 position:absolute;
+                 top:10px;
+                 left:10px;
+                 width:500px;
+                 height:23px;
+                 margin:auto auto auto auto;
+                 box-shadow: 0px 0px 4px rgba(0,0,0,0.2);
+                 border-radius:10px;
+             }
+
+             #text {
+                 position:absolute;
+                 top:8px;
+                 left:530px;
+                 width:30px;
+                 height:50px;
+                 margin:auto auto auto auto;
+                 font-size:22px;
+                 color: #000000;
+             }
+
+             div.outerBorder {
+                 position:relative;
+                 top:400px;
+                 width:600px;
+                 height:44px;
+                 margin:auto auto auto auto;
+                 border:8px solid rgba(0,0,0,0.1);
+                 background: rgb(252,252,252); /* Old browsers */
+                 background: -moz-linear-gradient(top,  rgba(252,252,252,1) 0%, rgba(237,237,237,1) 100%); /* FF3.6+ */
+                 background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(252,252,252,1)), color-stop(100%,rgba(237,237,237,1))); /* Chrome,Safari4+ */
+                 background: -webkit-linear-gradient(top,  rgba(252,252,252,1) 0%,rgba(237,237,237,1) 100%); /* Chrome10+,Safari5.1+ */
+                 background: -o-linear-gradient(top,  rgba(252,252,252,1) 0%,rgba(237,237,237,1) 100%); /* Opera 11.10+ */
+                 background: -ms-linear-gradient(top,  rgba(252,252,252,1) 0%,rgba(237,237,237,1) 100%); /* IE10+ */
+                 background: linear-gradient(to bottom,  rgba(252,252,252,1) 0%,rgba(237,237,237,1) 100%); /* W3C */
+                 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcfcfc', endColorstr='#ededed',GradientType=0 ); /* IE6-9 */
+                 border-radius:72px;
+                 box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+             }
+             
+
+             
+
+             
+        </style>
+    </head>
+
+
+    <body>
+        <div class="card" style="width: 100%">
+            
+            
+            <div id="mynetwork" class="card-body"></div>
+        </div>
+
+        
+            <div id="loadingBar">
+              <div class="outerBorder">
+                <div id="text">0%</div>
+                <div id="border">
+                  <div id="bar"></div>
+                </div>
+              </div>
+            </div>
+        
+        
+
+        <script type="text/javascript">
+
+              // initialize global variables.
+              var edges;
+              var nodes;
+              var allNodes;
+              var allEdges;
+              var nodeColors;
+              var originalNodes;
+              var network;
+              var container;
+              var options, data;
+              var filter = {
+                  item : '',
+                  property : '',
+                  value : []
+              };
+
+              
+
+              
+
+              // This method is responsible for drawing the graph, returns the drawn network
+              function drawGraph() {
+                  var container = document.getElementById('mynetwork');
+
+                  
+
+                  // parsing and collecting nodes and edges from the python
+                  nodes = new vis.DataSet([{"color": "#97c2fc", "id": "Paul Taylor", "label": "Paul Taylor", "shape": "dot"}, {"color": "#97c2fc", "id": "Nate Sanchez", "label": "Nate Sanchez", "shape": "dot"}, {"color": "#97c2fc", "id": "Alice Lopez", "label": "Alice Lopez", "shape": "dot"}, {"color": "#97c2fc", "id": "Ivy Martinez", "label": "Ivy Martinez", "shape": "dot"}, {"color": "#97c2fc", "id": "Karen Thompson", "label": "Karen Thompson", "shape": "dot"}, {"color": "#97c2fc", "id": "Eve Perez", "label": "Eve Perez", "shape": "dot"}, {"color": "#97c2fc", "id": "Mona Lewis", "label": "Mona Lewis", "shape": "dot"}, {"color": "#97c2fc", "id": "Ivy Garcia", "label": "Ivy Garcia", "shape": "dot"}, {"color": "#97c2fc", "id": "Ivy Martin", "label": "Ivy Martin", "shape": "dot"}, {"color": "#97c2fc", "id": "Xander Hernandez", "label": "Xander Hernandez", "shape": "dot"}, {"color": "#97c2fc", "id": "Frank Wilson", "label": "Frank Wilson", "shape": "dot"}, {"color": "#97c2fc", "id": "Nate Gonzalez", "label": "Nate Gonzalez", "shape": "dot"}, {"color": "#97c2fc", "id": "Paul Jones", "label": "Paul Jones", "shape": "dot"}, {"color": "#97c2fc", "id": "Hank Brown", "label": "Hank Brown", "shape": "dot"}, {"color": "#97c2fc", "id": "Hank Wilson", "label": "Hank Wilson", "shape": "dot"}, {"color": "#97c2fc", "id": "Steve Brown", "label": "Steve Brown", "shape": "dot"}, {"color": "#97c2fc", "id": "Eve Anderson", "label": "Eve Anderson", "shape": "dot"}, {"color": "#97c2fc", "id": "Zack Jones", "label": "Zack Jones", "shape": "dot"}, {"color": "#97c2fc", "id": "Xander Davis", "label": "Xander Davis", "shape": "dot"}, {"color": "#97c2fc", "id": "Diana Clark", "label": "Diana Clark", "shape": "dot"}, {"color": "#97c2fc", "id": "Wendy Lewis", "label": "Wendy Lewis", "shape": "dot"}, {"color": "#97c2fc", "id": "Nate Jackson", "label": "Nate Jackson", "shape": "dot"}, {"color": "#97c2fc", "id": "Quinn Sanchez", "label": "Quinn Sanchez", "shape": "dot"}, {"color": "#97c2fc", "id": "Paul Ramirez", "label": "Paul Ramirez", "shape": "dot"}, {"color": "#97c2fc", "id": "Diana Gonzalez", "label": "Diana Gonzalez", "shape": "dot"}, {"color": "#97c2fc", "id": "Grace Miller", "label": "Grace Miller", "shape": "dot"}, {"color": "#97c2fc", "id": "Grace Thompson", "label": "Grace Thompson", "shape": "dot"}, {"color": "#97c2fc", "id": "Uma Williams", "label": "Uma Williams", "shape": "dot"}, {"color": "#97c2fc", "id": "Charlie Harris", "label": "Charlie Harris", "shape": "dot"}, {"color": "#97c2fc", "id": "Steve Anderson", "label": "Steve Anderson", "shape": "dot"}, {"color": "#97c2fc", "id": "Ivy Miller", "label": "Ivy Miller", "shape": "dot"}, {"color": "#97c2fc", "id": "Nate Lee", "label": "Nate Lee", "shape": "dot"}, {"color": "#97c2fc", "id": "Alice Miller", "label": "Alice Miller", "shape": "dot"}, {"color": "#97c2fc", "id": "Leo Lopez", "label": "Leo Lopez", "shape": "dot"}, {"color": "#97c2fc", "id": "Bob Moore", "label": "Bob Moore", "shape": "dot"}, {"color": "#97c2fc", "id": "Yvonne Miller", "label": "Yvonne Miller", "shape": "dot"}, {"color": "#97c2fc", "id": "Zack Gonzalez", "label": "Zack Gonzalez", "shape": "dot"}, {"color": "#97c2fc", "id": "Uma Rodriguez", "label": "Uma Rodriguez", "shape": "dot"}, {"color": "#97c2fc", "id": "Grace Ramirez", "label": "Grace Ramirez", "shape": "dot"}, {"color": "#97c2fc", "id": "Zack Garcia", "label": "Zack Garcia", "shape": "dot"}, {"color": "#97c2fc", "id": "Paul Rodriguez", "label": "Paul Rodriguez", "shape": "dot"}, {"color": "#97c2fc", "id": "Eve Martinez", "label": "Eve Martinez", "shape": "dot"}, {"color": "#97c2fc", "id": "Zack Martin", "label": "Zack Martin", "shape": "dot"}, {"color": "#97c2fc", "id": "Leo Jones", "label": "Leo Jones", "shape": "dot"}, {"color": "#97c2fc", "id": "Jack Lewis", "label": "Jack Lewis", "shape": "dot"}, {"color": "#97c2fc", "id": "Uma Martinez", "label": "Uma Martinez", "shape": "dot"}, {"color": "#97c2fc", "id": "Ivy Thomas", "label": "Ivy Thomas", "shape": "dot"}, {"color": "#97c2fc", "id": "Eve Taylor", "label": "Eve Taylor", "shape": "dot"}, {"color": "#97c2fc", "id": "Grace White", "label": "Grace White", "shape": "dot"}, {"color": "#97c2fc", "id": "Victor Thompson", "label": "Victor Thompson", "shape": "dot"}, {"color": "#97c2fc", "id": "Nate Perez", "label": "Nate Perez", "shape": "dot"}, {"color": "#97c2fc", "id": "Quinn Clark", "label": "Quinn Clark", "shape": "dot"}, {"color": "#97c2fc", "id": "Eve Davis", "label": "Eve Davis", "shape": "dot"}, {"color": "#97c2fc", "id": "Yvonne Lopez", "label": "Yvonne Lopez", "shape": "dot"}, {"color": "#97c2fc", "id": "Eve Brown", "label": "Eve Brown", "shape": "dot"}, {"color": "#97c2fc", "id": "Yvonne Robinson", "label": "Yvonne Robinson", "shape": "dot"}, {"color": "#97c2fc", "id": "Diana Rodriguez", "label": "Diana Rodriguez", "shape": "dot"}, {"color": "#97c2fc", "id": "Quinn Thomas", "label": "Quinn Thomas", "shape": "dot"}, {"color": "#97c2fc", "id": "Grace Lee", "label": "Grace Lee", "shape": "dot"}, {"color": "#97c2fc", "id": "Uma Davis", "label": "Uma Davis", "shape": "dot"}, {"color": "#97c2fc", "id": "Karen Martinez", "label": "Karen Martinez", "shape": "dot"}, {"color": "#97c2fc", "id": "Zack Harris", "label": "Zack Harris", "shape": "dot"}, {"color": "#97c2fc", "id": "Uma Sanchez", "label": "Uma Sanchez", "shape": "dot"}, {"color": "#97c2fc", "id": "Quinn Brown", "label": "Quinn Brown", "shape": "dot"}, {"color": "#97c2fc", "id": "Wendy Thomas", "label": "Wendy Thomas", "shape": "dot"}, {"color": "#97c2fc", "id": "Quinn Jones", "label": "Quinn Jones", "shape": "dot"}, {"color": "#97c2fc", "id": "Paul Garcia", "label": "Paul Garcia", "shape": "dot"}, {"color": "#97c2fc", "id": "Victor Anderson", "label": "Victor Anderson", "shape": "dot"}, {"color": "#97c2fc", "id": "Charlie Sanchez", "label": "Charlie Sanchez", "shape": "dot"}, {"color": "#97c2fc", "id": "Alice Perez", "label": "Alice Perez", "shape": "dot"}, {"color": "#97c2fc", "id": "Alice Lewis", "label": "Alice Lewis", "shape": "dot"}, {"color": "#97c2fc", "id": "Zack Thompson", "label": "Zack Thompson", "shape": "dot"}, {"color": "#97c2fc", "id": "Hank Clark", "label": "Hank Clark", "shape": "dot"}, {"color": "#97c2fc", "id": "Alice Martin", "label": "Alice Martin", "shape": "dot"}, {"color": "#97c2fc", "id": "Wendy Garcia", "label": "Wendy Garcia", "shape": "dot"}, {"color": "#97c2fc", "id": "Karen Robinson", "label": "Karen Robinson", "shape": "dot"}, {"color": "#97c2fc", "id": "Ivy Thompson", "label": "Ivy Thompson", "shape": "dot"}, {"color": "#97c2fc", "id": "Hank Williams", "label": "Hank Williams", "shape": "dot"}, {"color": "#97c2fc", "id": "Quinn Smith", "label": "Quinn Smith", "shape": "dot"}, {"color": "#97c2fc", "id": "Nate Davis", "label": "Nate Davis", "shape": "dot"}, {"color": "#97c2fc", "id": "Hank Anderson", "label": "Hank Anderson", "shape": "dot"}, {"color": "#97c2fc", "id": "Alice Harris", "label": "Alice Harris", "shape": "dot"}, {"color": "#97c2fc", "id": "Steve Taylor", "label": "Steve Taylor", "shape": "dot"}, {"color": "#97c2fc", "id": "Zack Lee", "label": "Zack Lee", "shape": "dot"}, {"color": "#97c2fc", "id": "Grace Jackson", "label": "Grace Jackson", "shape": "dot"}, {"color": "#97c2fc", "id": "Karen Moore", "label": "Karen Moore", "shape": "dot"}, {"color": "#97c2fc", "id": "Bob Hernandez", "label": "Bob Hernandez", "shape": "dot"}, {"color": "#97c2fc", "id": "Diana Smith", "label": "Diana Smith", "shape": "dot"}, {"color": "#97c2fc", "id": "Grace Harris", "label": "Grace Harris", "shape": "dot"}, {"color": "#97c2fc", "id": "Olivia Miller", "label": "Olivia Miller", "shape": "dot"}, {"color": "#97c2fc", "id": "Bob Brown", "label": "Bob Brown", "shape": "dot"}, {"color": "#97c2fc", "id": "Frank Robinson", "label": "Frank Robinson", "shape": "dot"}, {"color": "#97c2fc", "id": "Mona White", "label": "Mona White", "shape": "dot"}, {"color": "#97c2fc", "id": "Steve Smith", "label": "Steve Smith", "shape": "dot"}, {"color": "#97c2fc", "id": "Leo Garcia", "label": "Leo Garcia", "shape": "dot"}, {"color": "#97c2fc", "id": "Zack Lopez", "label": "Zack Lopez", "shape": "dot"}, {"color": "#97c2fc", "id": "Tina Robinson", "label": "Tina Robinson", "shape": "dot"}, {"color": "#97c2fc", "id": "Tina Anderson", "label": "Tina Anderson", "shape": "dot"}, {"color": "#97c2fc", "id": "Eve Johnson", "label": "Eve Johnson", "shape": "dot"}, {"color": "#97c2fc", "id": "Leo Smith", "label": "Leo Smith", "shape": "dot"}, {"color": "#97c2fc", "id": "Rita Jackson", "label": "Rita Jackson", "shape": "dot"}, {"color": "#97c2fc", "id": "Wendy Gonzalez", "label": "Wendy Gonzalez", "shape": "dot"}, {"color": "#97c2fc", "id": "Alice Moore", "label": "Alice Moore", "shape": "dot"}, {"color": "#97c2fc", "id": "Frank Jackson", "label": "Frank Jackson", "shape": "dot"}, {"color": "#97c2fc", "id": "Wendy Robinson", "label": "Wendy Robinson", "shape": "dot"}, {"color": "#97c2fc", "id": "Bob Williams", "label": "Bob Williams", "shape": "dot"}, {"color": "#97c2fc", "id": "Tina Lopez", "label": "Tina Lopez", "shape": "dot"}, {"color": "#97c2fc", "id": "Charlie Thomas", "label": "Charlie Thomas", "shape": "dot"}, {"color": "#97c2fc", "id": "Jack Clark", "label": "Jack Clark", "shape": "dot"}, {"color": "#97c2fc", "id": "Wendy White", "label": "Wendy White", "shape": "dot"}, {"color": "#97c2fc", "id": "Diana Hernandez", "label": "Diana Hernandez", "shape": "dot"}, {"color": "#97c2fc", "id": "Zack Clark", "label": "Zack Clark", "shape": "dot"}, {"color": "#97c2fc", "id": "Rita Williams", "label": "Rita Williams", "shape": "dot"}, {"color": "#97c2fc", "id": "Rita Hernandez", "label": "Rita Hernandez", "shape": "dot"}, {"color": "#97c2fc", "id": "Victor Martin", "label": "Victor Martin", "shape": "dot"}, {"color": "#97c2fc", "id": "Leo Perez", "label": "Leo Perez", "shape": "dot"}, {"color": "#97c2fc", "id": "Uma Jackson", "label": "Uma Jackson", "shape": "dot"}, {"color": "#97c2fc", "id": "Wendy Anderson", "label": "Wendy Anderson", "shape": "dot"}, {"color": "#97c2fc", "id": "Paul Davis", "label": "Paul Davis", "shape": "dot"}, {"color": "#97c2fc", "id": "Xander Clark", "label": "Xander Clark", "shape": "dot"}, {"color": "#97c2fc", "id": "Eve Miller", "label": "Eve Miller", "shape": "dot"}, {"color": "#97c2fc", "id": "Karen Wilson", "label": "Karen Wilson", "shape": "dot"}, {"color": "#97c2fc", "id": "Karen White", "label": "Karen White", "shape": "dot"}, {"color": "#97c2fc", "id": "Uma Garcia", "label": "Uma Garcia", "shape": "dot"}, {"color": "#97c2fc", "id": "Paul Lewis", "label": "Paul Lewis", "shape": "dot"}, {"color": "#97c2fc", "id": "Diana Jones", "label": "Diana Jones", "shape": "dot"}, {"color": "#97c2fc", "id": "Nate Thomas", "label": "Nate Thomas", "shape": "dot"}, {"color": "#97c2fc", "id": "Steve Clark", "label": "Steve Clark", "shape": "dot"}, {"color": "#97c2fc", "id": "Ivy Clark", "label": "Ivy Clark", "shape": "dot"}, {"color": "#97c2fc", "id": "Tina Miller", "label": "Tina Miller", "shape": "dot"}, {"color": "#97c2fc", "id": "Mona Anderson", "label": "Mona Anderson", "shape": "dot"}, {"color": "#97c2fc", "id": "Leo Lee", "label": "Leo Lee", "shape": "dot"}, {"color": "#97c2fc", "id": "Grace Gonzalez", "label": "Grace Gonzalez", "shape": "dot"}, {"color": "#97c2fc", "id": "Jack Hernandez", "label": "Jack Hernandez", "shape": "dot"}, {"color": "#97c2fc", "id": "Jack Thompson", "label": "Jack Thompson", "shape": "dot"}, {"color": "#97c2fc", "id": "Bob Ramirez", "label": "Bob Ramirez", "shape": "dot"}, {"color": "#97c2fc", "id": "Rita Moore", "label": "Rita Moore", "shape": "dot"}, {"color": "#97c2fc", "id": "Bob Thompson", "label": "Bob Thompson", "shape": "dot"}, {"color": "#97c2fc", "id": "Grace Martin", "label": "Grace Martin", "shape": "dot"}, {"color": "#97c2fc", "id": "Frank Taylor", "label": "Frank Taylor", "shape": "dot"}, {"color": "#97c2fc", "id": "Xander Lewis", "label": "Xander Lewis", "shape": "dot"}, {"color": "#97c2fc", "id": "Nate Miller", "label": "Nate Miller", "shape": "dot"}, {"color": "#97c2fc", "id": "Alice Davis", "label": "Alice Davis", "shape": "dot"}, {"color": "#97c2fc", "id": "Ivy Williams", "label": "Ivy Williams", "shape": "dot"}, {"color": "#97c2fc", "id": "Ivy Smith", "label": "Ivy Smith", "shape": "dot"}, {"color": "#97c2fc", "id": "Diana Miller", "label": "Diana Miller", "shape": "dot"}, {"color": "#97c2fc", "id": "Mona Jones", "label": "Mona Jones", "shape": "dot"}, {"color": "#97c2fc", "id": "Steve Sanchez", "label": "Steve Sanchez", "shape": "dot"}, {"color": "#97c2fc", "id": "Jack Garcia", "label": "Jack Garcia", "shape": "dot"}, {"color": "#97c2fc", "id": "Grace Lewis", "label": "Grace Lewis", "shape": "dot"}, {"color": "#97c2fc", "id": "Leo Davis", "label": "Leo Davis", "shape": "dot"}, {"color": "#97c2fc", "id": "Victor Smith", "label": "Victor Smith", "shape": "dot"}, {"color": "#97c2fc", "id": "Uma Moore", "label": "Uma Moore", "shape": "dot"}, {"color": "#97c2fc", "id": "Yvonne Harris", "label": "Yvonne Harris", "shape": "dot"}, {"color": "#97c2fc", "id": "Zack Sanchez", "label": "Zack Sanchez", "shape": "dot"}, {"color": "#97c2fc", "id": "Olivia White", "label": "Olivia White", "shape": "dot"}, {"color": "#97c2fc", "id": "Tina Rodriguez", "label": "Tina Rodriguez", "shape": "dot"}, {"color": "#97c2fc", "id": "Olivia Ramirez", "label": "Olivia Ramirez", "shape": "dot"}, {"color": "#97c2fc", "id": "Karen Sanchez", "label": "Karen Sanchez", "shape": "dot"}, {"color": "#97c2fc", "id": "Hank Ramirez", "label": "Hank Ramirez", "shape": "dot"}, {"color": "#97c2fc", "id": "Wendy Martinez", "label": "Wendy Martinez", "shape": "dot"}, {"color": "#97c2fc", "id": "Nate Moore", "label": "Nate Moore", "shape": "dot"}, {"color": "#97c2fc", "id": "Hank Thompson", "label": "Hank Thompson", "shape": "dot"}, {"color": "#97c2fc", "id": "Hank Martin", "label": "Hank Martin", "shape": "dot"}, {"color": "#97c2fc", "id": "Jack Thomas", "label": "Jack Thomas", "shape": "dot"}, {"color": "#97c2fc", "id": "Karen Gonzalez", "label": "Karen Gonzalez", "shape": "dot"}, {"color": "#97c2fc", "id": "Olivia Lewis", "label": "Olivia Lewis", "shape": "dot"}, {"color": "#97c2fc", "id": "Quinn Johnson", "label": "Quinn Johnson", "shape": "dot"}, {"color": "#97c2fc", "id": "Eve Sanchez", "label": "Eve Sanchez", "shape": "dot"}, {"color": "#97c2fc", "id": "Victor Johnson", "label": "Victor Johnson", "shape": "dot"}, {"color": "#97c2fc", "id": "Paul Perez", "label": "Paul Perez", "shape": "dot"}, {"color": "#97c2fc", "id": "Frank Davis", "label": "Frank Davis", "shape": "dot"}, {"color": "#97c2fc", "id": "Nate Clark", "label": "Nate Clark", "shape": "dot"}, {"color": "#97c2fc", "id": "Steve Ramirez", "label": "Steve Ramirez", "shape": "dot"}, {"color": "#97c2fc", "id": "Grace Garcia", "label": "Grace Garcia", "shape": "dot"}, {"color": "#97c2fc", "id": "Paul Thompson", "label": "Paul Thompson", "shape": "dot"}, {"color": "#97c2fc", "id": "Hank Johnson", "label": "Hank Johnson", "shape": "dot"}, {"color": "#97c2fc", "id": "Yvonne Smith", "label": "Yvonne Smith", "shape": "dot"}, {"color": "#97c2fc", "id": "Tina Jones", "label": "Tina Jones", "shape": "dot"}, {"color": "red", "id": "Group A", "label": "Group A", "shape": "dot"}, {"color": "red", "id": "Group B", "label": "Group B", "shape": "dot"}, {"color": "red", "id": "Group C", "label": "Group C", "shape": "dot"}, {"color": "red", "id": "Group D", "label": "Group D", "shape": "dot"}, {"color": "red", "id": "Group E", "label": "Group E", "shape": "dot"}]);
+                  edges = new vis.DataSet([{"color": "gray", "from": "Paul Taylor", "to": "Group A", "value": 0.0}, {"color": "gray", "from": "Nate Sanchez", "to": "Group B", "value": 0.0}, {"color": "gray", "from": "Alice Lopez", "to": "Group C", "value": 0.0}, {"color": "gray", "from": "Ivy Martinez", "to": "Group D", "value": 0.0}, {"color": "gray", "from": "Karen Thompson", "to": "Group E", "value": 0.0}, {"color": "gray", "from": "Eve Perez", "to": "Group A", "value": 0.0}, {"color": "gray", "from": "Mona Lewis", "to": "Group B", "value": 0.0}, {"color": "gray", "from": "Ivy Garcia", "to": "Group C", "value": 0.0}, {"color": "gray", "from": "Ivy Martin", "to": "Group D", "value": 0.0}, {"color": "gray", "from": "Xander Hernandez", "to": "Group E", "value": 0.0}, {"color": "gray", "from": "Frank Wilson", "to": "Group A", "value": 0.0}, {"color": "gray", "from": "Nate Gonzalez", "to": "Group B", "value": 0.0}, {"color": "gray", "from": "Paul Jones", "to": "Group C", "value": 0.0}, {"color": "gray", "from": "Hank Brown", "to": "Group D", "value": 0.0}, {"color": "gray", "from": "Hank Wilson", "to": "Group E", "value": 0.0}, {"color": "gray", "from": "Steve Brown", "to": "Group A", "value": 0.0}, {"color": "gray", "from": "Eve Anderson", "to": "Group B", "value": 0.0}, {"color": "gray", "from": "Zack Jones", "to": "Group C", "value": 0.0}, {"color": "gray", "from": "Xander Davis", "to": "Group D", "value": 0.0}, {"color": "gray", "from": "Diana Clark", "to": "Group E", "value": 0.0}, {"color": "gray", "from": "Wendy Lewis", "to": "Group A", "value": 0.0}, {"color": "gray", "from": "Nate Jackson", "to": "Group B", "value": 0.0}, {"color": "gray", "from": "Quinn Sanchez", "to": "Group C", "value": 0.0}, {"color": "gray", "from": "Paul Ramirez", "to": "Group D", "value": 0.0}, {"color": "gray", "from": "Diana Gonzalez", "to": "Group E", "value": 0.0}, {"color": "gray", "from": "Grace Miller", "to": "Group A", "value": 0.0}, {"color": "gray", "from": "Grace Thompson", "to": "Group B", "value": 0.0}, {"color": "gray", "from": "Uma Williams", "to": "Group C", "value": 0.0}, {"color": "gray", "from": "Charlie Harris", "to": "Group D", "value": 0.0}, {"color": "gray", "from": "Steve Anderson", "to": "Group E", "value": 0.0}, {"color": "gray", "from": "Ivy Miller", "to": "Group A", "value": 0.0}, {"color": "gray", "from": "Nate Lee", "to": "Group B", "value": 0.0}, {"color": "gray", "from": "Alice Miller", "to": "Group C", "value": 0.0}, {"color": "gray", "from": "Leo Lopez", "to": "Group D", "value": 0.0}, {"color": "gray", "from": "Bob Moore", "to": "Group E", "value": 0.0}, {"color": "gray", "from": "Yvonne Miller", "to": "Group A", "value": 0.0}, {"color": "gray", "from": "Zack Gonzalez", "to": "Group B", "value": 0.0}, {"color": "gray", "from": "Uma Rodriguez", "to": "Group C", "value": 0.0}, {"color": "gray", "from": "Grace Ramirez", "to": "Group D", "value": 0.0}, {"color": "gray", "from": "Zack Garcia", "to": "Group E", "value": 0.0}, {"color": "gray", "from": "Paul Rodriguez", "to": "Group A", "value": 0.0}, {"color": "gray", "from": "Eve Martinez", "to": "Group B", "value": 0.0}, {"color": "gray", "from": "Zack Martin", "to": "Group C", "value": 0.0}, {"color": "gray", "from": "Leo Jones", "to": "Group D", "value": 0.0}, {"color": "gray", "from": "Jack Lewis", "to": "Group E", "value": 0.0}, {"color": "gray", "from": "Uma Martinez", "to": "Group A", "value": 0.0}, {"color": "gray", "from": "Ivy Thomas", "to": "Group B", "value": 0.0}, {"color": "gray", "from": "Eve Taylor", "to": "Group C", "value": 0.0}, {"color": "gray", "from": "Grace White", "to": "Group D", "value": 0.0}, {"color": "gray", "from": "Victor Thompson", "to": "Group E", "value": 0.0}, {"color": "gray", "from": "Nate Perez", "to": "Group A", "value": 0.0}, {"color": "gray", "from": "Quinn Clark", "to": "Group B", "value": 0.0}, {"color": "gray", "from": "Eve Davis", "to": "Group C", "value": 0.0}, {"color": "gray", "from": "Yvonne Lopez", "to": "Group D", "value": 0.0}, {"color": "gray", "from": "Eve Brown", "to": "Group E", "value": 0.0}, {"color": "gray", "from": "Yvonne Robinson", "to": "Group A", "value": 0.0}, {"color": "gray", "from": "Diana Rodriguez", "to": "Group B", "value": 0.0}, {"color": "gray", "from": "Quinn Thomas", "to": "Group C", "value": 0.0}, {"color": "gray", "from": "Grace Lee", "to": "Group D", "value": 0.0}, {"color": "gray", "from": "Uma Davis", "to": "Group E", "value": 0.0}, {"color": "gray", "from": "Karen Martinez", "to": "Group A", "value": 0.0}, {"color": "gray", "from": "Zack Harris", "to": "Group B", "value": 0.0}, {"color": "gray", "from": "Uma Sanchez", "to": "Group C", "value": 0.0}, {"color": "gray", "from": "Quinn Brown", "to": "Group D", "value": 0.0}, {"color": "gray", "from": "Wendy Thomas", "to": "Group E", "value": 0.0}, {"color": "gray", "from": "Quinn Jones", "to": "Group A", "value": 0.0}, {"color": "gray", "from": "Paul Garcia", "to": "Group B", "value": 0.0}, {"color": "gray", "from": "Victor Anderson", "to": "Group C", "value": 0.0}, {"color": "gray", "from": "Zack Garcia", "to": "Group D", "value": 0.0}, {"color": "gray", "from": "Charlie Sanchez", "to": "Group E", "value": 0.0}, {"color": "gray", "from": "Alice Perez", "to": "Group A", "value": 0.0}, {"color": "gray", "from": "Zack Jones", "to": "Group B", "value": 0.0}, {"color": "gray", "from": "Alice Lewis", "to": "Group C", "value": 0.0}, {"color": "gray", "from": "Zack Thompson", "to": "Group D", "value": 0.0}, {"color": "gray", "from": "Hank Clark", "to": "Group E", "value": 0.0}, {"color": "gray", "from": "Alice Martin", "to": "Group A", "value": 0.0}, {"color": "gray", "from": "Hank Clark", "to": "Group B", "value": 0.0}, {"color": "gray", "from": "Wendy Garcia", "to": "Group C", "value": 0.0}, {"color": "gray", "from": "Karen Robinson", "to": "Group D", "value": 0.0}, {"color": "gray", "from": "Ivy Thompson", "to": "Group E", "value": 0.0}, {"color": "gray", "from": "Hank Williams", "to": "Group A", "value": 0.0}, {"color": "gray", "from": "Quinn Smith", "to": "Group B", "value": 0.0}, {"color": "gray", "from": "Nate Davis", "to": "Group C", "value": 0.0}, {"color": "gray", "from": "Hank Anderson", "to": "Group D", "value": 0.0}, {"color": "gray", "from": "Alice Harris", "to": "Group E", "value": 0.0}, {"color": "gray", "from": "Steve Taylor", "to": "Group A", "value": 0.0}, {"color": "gray", "from": "Zack Lee", "to": "Group B", "value": 0.0}, {"color": "gray", "from": "Grace Jackson", "to": "Group C", "value": 0.0}, {"color": "gray", "from": "Karen Moore", "to": "Group D", "value": 0.0}, {"color": "gray", "from": "Paul Taylor", "to": "Group E", "value": 0.0}, {"color": "gray", "from": "Bob Hernandez", "to": "Group A", "value": 0.0}, {"color": "gray", "from": "Diana Smith", "to": "Group B", "value": 0.0}, {"color": "gray", "from": "Ivy Miller", "to": "Group C", "value": 0.0}, {"color": "gray", "from": "Grace Harris", "to": "Group D", "value": 0.0}, {"color": "gray", "from": "Olivia Miller", "to": "Group E", "value": 0.0}, {"color": "gray", "from": "Bob Brown", "to": "Group A", "value": 0.0}, {"color": "gray", "from": "Frank Robinson", "to": "Group B", "value": 0.0}, {"color": "gray", "from": "Mona White", "to": "Group C", "value": 0.0}, {"color": "gray", "from": "Steve Smith", "to": "Group D", "value": 0.0}, {"color": "gray", "from": "Nate Sanchez", "to": "Group E", "value": 0.0}, {"color": "gray", "from": "Leo Garcia", "to": "Group A", "value": 0.0}, {"color": "gray", "from": "Zack Lopez", "to": "Group B", "value": 0.0}, {"color": "gray", "from": "Tina Robinson", "to": "Group C", "value": 0.0}, {"color": "gray", "from": "Tina Anderson", "to": "Group D", "value": 0.0}, {"color": "gray", "from": "Eve Johnson", "to": "Group E", "value": 0.0}, {"color": "gray", "from": "Leo Smith", "to": "Group A", "value": 0.0}, {"color": "gray", "from": "Rita Jackson", "to": "Group B", "value": 0.0}, {"color": "gray", "from": "Wendy Gonzalez", "to": "Group C", "value": 0.0}, {"color": "gray", "from": "Alice Moore", "to": "Group D", "value": 0.0}, {"color": "gray", "from": "Frank Jackson", "to": "Group E", "value": 0.0}, {"color": "gray", "from": "Wendy Robinson", "to": "Group A", "value": 0.0}, {"color": "gray", "from": "Bob Williams", "to": "Group B", "value": 0.0}, {"color": "gray", "from": "Tina Lopez", "to": "Group C", "value": 0.0}, {"color": "gray", "from": "Charlie Thomas", "to": "Group D", "value": 0.0}, {"color": "gray", "from": "Jack Clark", "to": "Group E", "value": 0.0}, {"color": "gray", "from": "Wendy White", "to": "Group A", "value": 0.0}, {"color": "gray", "from": "Nate Perez", "to": "Group B", "value": 0.0}, {"color": "gray", "from": "Diana Hernandez", "to": "Group C", "value": 0.0}, {"color": "gray", "from": "Zack Clark", "to": "Group D", "value": 0.0}, {"color": "gray", "from": "Rita Williams", "to": "Group E", "value": 0.0}, {"color": "gray", "from": "Rita Hernandez", "to": "Group A", "value": 0.0}, {"color": "gray", "from": "Victor Martin", "to": "Group B", "value": 0.0}, {"color": "gray", "from": "Leo Perez", "to": "Group C", "value": 0.0}, {"color": "gray", "from": "Uma Jackson", "to": "Group D", "value": 0.0}, {"color": "gray", "from": "Wendy Anderson", "to": "Group E", "value": 0.0}, {"color": "gray", "from": "Paul Davis", "to": "Group A", "value": 0.0}, {"color": "gray", "from": "Paul Rodriguez", "to": "Group B", "value": 0.0}, {"color": "gray", "from": "Xander Clark", "to": "Group C", "value": 0.0}, {"color": "gray", "from": "Eve Miller", "to": "Group D", "value": 0.0}, {"color": "gray", "from": "Karen Wilson", "to": "Group E", "value": 0.0}, {"color": "gray", "from": "Karen White", "to": "Group A", "value": 0.0}, {"color": "gray", "from": "Uma Garcia", "to": "Group B", "value": 0.0}, {"color": "gray", "from": "Paul Lewis", "to": "Group C", "value": 0.0}, {"color": "gray", "from": "Diana Jones", "to": "Group D", "value": 0.0}, {"color": "gray", "from": "Nate Thomas", "to": "Group E", "value": 0.0}, {"color": "gray", "from": "Steve Clark", "to": "Group A", "value": 0.0}, {"color": "gray", "from": "Ivy Clark", "to": "Group B", "value": 0.0}, {"color": "gray", "from": "Tina Miller", "to": "Group E", "value": 0.0}, {"color": "gray", "from": "Mona Anderson", "to": "Group A", "value": 0.0}, {"color": "gray", "from": "Leo Lee", "to": "Group B", "value": 0.0}, {"color": "gray", "from": "Grace Gonzalez", "to": "Group C", "value": 0.0}, {"color": "gray", "from": "Jack Hernandez", "to": "Group D", "value": 0.0}, {"color": "gray", "from": "Alice Lewis", "to": "Group E", "value": 0.0}, {"color": "gray", "from": "Jack Thompson", "to": "Group A", "value": 0.0}, {"color": "gray", "from": "Bob Ramirez", "to": "Group B", "value": 0.0}, {"color": "gray", "from": "Rita Moore", "to": "Group C", "value": 0.0}, {"color": "gray", "from": "Bob Thompson", "to": "Group D", "value": 0.0}, {"color": "gray", "from": "Grace Martin", "to": "Group E", "value": 0.0}, {"color": "gray", "from": "Frank Taylor", "to": "Group A", "value": 0.0}, {"color": "gray", "from": "Xander Lewis", "to": "Group B", "value": 0.0}, {"color": "gray", "from": "Nate Miller", "to": "Group C", "value": 0.0}, {"color": "gray", "from": "Alice Davis", "to": "Group D", "value": 0.0}, {"color": "gray", "from": "Ivy Williams", "to": "Group E", "value": 0.0}, {"color": "gray", "from": "Ivy Smith", "to": "Group A", "value": 0.0}, {"color": "gray", "from": "Diana Miller", "to": "Group B", "value": 0.0}, {"color": "gray", "from": "Mona Jones", "to": "Group C", "value": 0.0}, {"color": "gray", "from": "Steve Sanchez", "to": "Group D", "value": 0.0}, {"color": "gray", "from": "Jack Garcia", "to": "Group E", "value": 0.0}, {"color": "gray", "from": "Grace Lewis", "to": "Group A", "value": 0.0}, {"color": "gray", "from": "Leo Davis", "to": "Group B", "value": 0.0}, {"color": "gray", "from": "Victor Smith", "to": "Group C", "value": 0.0}, {"color": "gray", "from": "Uma Moore", "to": "Group D", "value": 0.0}, {"color": "gray", "from": "Yvonne Harris", "to": "Group E", "value": 0.0}, {"color": "gray", "from": "Zack Sanchez", "to": "Group A", "value": 0.0}, {"color": "gray", "from": "Olivia White", "to": "Group B", "value": 0.0}, {"color": "gray", "from": "Tina Rodriguez", "to": "Group C", "value": 0.0}, {"color": "gray", "from": "Olivia Ramirez", "to": "Group D", "value": 0.0}, {"color": "gray", "from": "Karen Sanchez", "to": "Group E", "value": 0.0}, {"color": "gray", "from": "Hank Ramirez", "to": "Group A", "value": 0.0}, {"color": "gray", "from": "Wendy Martinez", "to": "Group B", "value": 0.0}, {"color": "gray", "from": "Nate Moore", "to": "Group C", "value": 0.0}, {"color": "gray", "from": "Eve Taylor", "to": "Group E", "value": 0.0}, {"color": "gray", "from": "Hank Thompson", "to": "Group A", "value": 0.0}, {"color": "gray", "from": "Hank Martin", "to": "Group B", "value": 0.0}, {"color": "gray", "from": "Jack Thomas", "to": "Group C", "value": 0.0}, {"color": "gray", "from": "Karen Gonzalez", "to": "Group E", "value": 0.0}, {"color": "gray", "from": "Quinn Smith", "to": "Group A", "value": 0.0}, {"color": "gray", "from": "Olivia Lewis", "to": "Group B", "value": 0.0}, {"color": "gray", "from": "Quinn Johnson", "to": "Group C", "value": 0.0}, {"color": "gray", "from": "Eve Martinez", "to": "Group D", "value": 0.0}, {"color": "gray", "from": "Eve Sanchez", "to": "Group E", "value": 0.0}, {"color": "gray", "from": "Nate Jackson", "to": "Group A", "value": 0.0}, {"color": "gray", "from": "Victor Johnson", "to": "Group C", "value": 0.0}, {"color": "gray", "from": "Paul Perez", "to": "Group D", "value": 0.0}, {"color": "gray", "from": "Frank Davis", "to": "Group E", "value": 0.0}, {"color": "gray", "from": "Nate Clark", "to": "Group B", "value": 0.0}, {"color": "gray", "from": "Steve Ramirez", "to": "Group C", "value": 0.0}, {"color": "gray", "from": "Grace Garcia", "to": "Group D", "value": 0.0}, {"color": "gray", "from": "Paul Thompson", "to": "Group E", "value": 0.0}, {"color": "gray", "from": "Hank Johnson", "to": "Group A", "value": 0.0}, {"color": "gray", "from": "Uma Jackson", "to": "Group B", "value": 0.0}, {"color": "gray", "from": "Jack Hernandez", "to": "Group C", "value": 0.0}, {"color": "gray", "from": "Yvonne Smith", "to": "Group D", "value": 0.0}, {"color": "gray", "from": "Tina Jones", "to": "Group E", "value": 0.0}]);
+
+                  nodeColors = {};
+                  allNodes = nodes.get({ returnType: "Object" });
+                  for (nodeId in allNodes) {
+                    nodeColors[nodeId] = allNodes[nodeId].color;
+                  }
+                  allEdges = edges.get({ returnType: "Object" });
+                  // adding nodes and edges to the graph
+                  data = {nodes: nodes, edges: edges};
+
+                  var options = {
+    "configure": {
+        "enabled": false
+    },
+    "edges": {
+        "color": {
+            "inherit": true
+        },
+        "smooth": {
+            "enabled": true,
+            "type": "dynamic"
+        }
+    },
+    "interaction": {
+        "dragNodes": true,
+        "hideEdgesOnDrag": false,
+        "hideNodesOnDrag": false
+    },
+    "physics": {
+        "enabled": true,
+        "stabilization": {
+            "enabled": true,
+            "fit": true,
+            "iterations": 1000,
+            "onlyDynamicEdges": false,
+            "updateInterval": 50
+        }
+    }
+};
+
+                  
+
+
+                  
+
+                  network = new vis.Network(container, data, options);
+
+                  
+
+                  
+
+                  
+
+
+                  
+                      network.on("stabilizationProgress", function(params) {
+                          document.getElementById('loadingBar').removeAttribute("style");
+                          var maxWidth = 496;
+                          var minWidth = 20;
+                          var widthFactor = params.iterations/params.total;
+                          var width = Math.max(minWidth,maxWidth * widthFactor);
+                          document.getElementById('bar').style.width = width + 'px';
+                          document.getElementById('text').innerHTML = Math.round(widthFactor*100) + '%';
+                      });
+                      network.once("stabilizationIterationsDone", function() {
+                          document.getElementById('text').innerHTML = '100%';
+                          document.getElementById('bar').style.width = '496px';
+                          document.getElementById('loadingBar').style.opacity = 0;
+                          // really clean the dom element
+                          setTimeout(function () {document.getElementById('loadingBar').style.display = 'none';}, 500);
+                      });
+                  
+
+                  return network;
+
+              }
+              drawGraph();
+        </script>
+    </body>
+</html>
