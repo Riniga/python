@@ -1,3 +1,14 @@
-## Install packages
-Robot Framework: pip install robotframework
-pip install --upgrade robotframework-seleniumlibrary
+# UI Tests with robot framework
+Execute UI tests on websites 
+
+## Packages
+* robotframework
+* robotframework-seleniumlibrary
+
+## Upgrade packages
+pip list --outdated
+pip install --upgrade <package>
+
+
+# Execute the test
+python -m robot --outputdir output google.robot 
