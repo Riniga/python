@@ -12,7 +12,7 @@ median = df["Calories"].median()
 mode = df["Calories"].mode()[0]
 
 df["Calories"].fillna(mode, inplace = True)
-df.dropna(subset=['Date'], inplace = True)
+df.dropna(subset=['Date'], inplace = True) #Remove a row with Date not set
 df.loc[7, 'Duration'] = 45
 df['Date'] = pd.to_datetime(df['Date'], format='mixed')
 
