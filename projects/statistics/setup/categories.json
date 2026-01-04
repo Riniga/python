@@ -1,0 +1,43 @@
+[
+  { "id": "env_temp", "name": "Temperatur & CO2", "category": "Miljö & klimat", "desc": "Globala temperaturförändringar, CO₂-nivåer och glaciärsmältning." },
+  { "id": "env_forest", "name": "Skog & biologisk mångfald", "category": "Miljö & klimat", "desc": "Skogstäckning, arter och biodiversitet." },
+  { "id": "env_pollution", "name": "Föroreningar", "category": "Miljö & klimat", "desc": "Luft-, vatten- och plastföroreningar." },
+  { "id": "env_energy", "name": "Energi", "category": "Miljö & klimat", "desc": "Energiförbrukning och andel förnybart." },
+  { "id": "env_disaster", "name": "Naturkatastrofer", "category": "Miljö & klimat", "desc": "Extrema väderhändelser och katastrofer." },
+
+  { "id": "hum_health", "name": "Hälsa", "category": "Människors välmående", "desc": "Livslängd, sjukdomar, spädbarnsdödlighet." },
+  { "id": "hum_edu", "name": "Utbildning", "category": "Människors välmående", "desc": "Utbildningsnivå och läskunnighet." },
+  { "id": "hum_mental", "name": "Mental hälsa", "category": "Människors välmående", "desc": "Livstillfredsställelse (t.ex. World Happiness Report)" },
+  { "id": "hum_basic", "name": "Grundbehov", "category": "Människors välmående", "desc": "Tillgång till rent vatten, mat och bostad" },
+  { "id": "hum_pop", "name": "Befolkning", "category": "Människors välmående", "desc": "Befolkningstillväxt och urbanisering." },
+
+  { "id": "eco_gdp", "name": "Ekonomisk tillväxt", "category": "Ekonomi & jämlikhet", "desc": "BNP, inflation, sysselsättning." },
+  { "id": "eco_wealth", "name": "Rikedom & ojämlikhet", "category": "Ekonomi & jämlikhet", "desc": "Gini-index och fördelning av inkomster." },
+  { "id": "eco_poverty", "name": "Fattigdom", "category": "Ekonomi & jämlikhet", "desc": "Andel som lever under fattigdomsgränsen." },
+  { "id": "eco_innov", "name": "Innovation & teknologi", "category": "Ekonomi & jämlikhet", "desc": "Innovation, FoU och teknikåtkomst." },
+  { "id": "eco_trade", "name": "Handel & stabilitet", "category": "Ekonomi & jämlikhet", "desc": "Handel, skuldnivåer och ekonomisk stabilitet." },
+
+  { "id": "pol_democracy", "name": "Demokrati & frihet", "category": "Politik & samhällsstyrning", "desc": "Demokratiindex, pressfrihet, korruption." },
+  { "id": "pol_rights", "name": "Rättsstat & mänskliga rättigheter", "category": "Politik & samhällsstyrning", "desc": "Rättsstatsprincip och mänskliga rättigheter." },
+  { "id": "pol_trust", "name": "Tillit & valdeltagande", "category": "Politik & samhällsstyrning", "desc": "Förtroende för institutioner och politiskt engagemang." },
+  { "id": "pol_risk", "name": "Politiska risker", "category": "Politik & samhällsstyrning", "desc": "Risker för instabilitet eller statskupper." },
+  { "id": "pol_transparency", "name": "Transparens", "category": "Politik & samhällsstyrning", "desc": "Regeringars transparens och ansvarstagande." },
+
+  { "id": "sec_conflicts", "name": "Konflikter", "category": "Krig, fred & säkerhet", "desc": "Antal och intensitet av väpnade konflikter." },
+  { "id": "sec_military", "name": "Militära resurser", "category": "Krig, fred & säkerhet", "desc": "Utgifter och vapenexport." },
+  { "id": "sec_refugees", "name": "Flyktingar", "category": "Krig, fred & säkerhet", "desc": "Antal flyktingar och internflyktingar." },
+  { "id": "sec_peaceindex", "name": "Fredsnivå", "category": "Krig, fred & säkerhet", "desc": "Global Peace Index och stabilitet." },
+  { "id": "sec_terror", "name": "Terrorism & brott", "category": "Krig, fred & säkerhet", "desc": "Terrorattacker och organiserad brottslighet." },
+
+  { "id": "tech_internet", "name": "Digital tillgång", "category": "Teknologi & innovation", "desc": "Internetåtkomst och digital inkludering." },
+  { "id": "tech_ai", "name": "AI & automation", "category": "Teknologi & innovation", "desc": "AI-utveckling och automatisering." },
+  { "id": "tech_research", "name": "Forskning", "category": "Teknologi & innovation", "desc": "Vetenskapliga publikationer och FoU." },
+  { "id": "tech_cyber", "name": "Cybersäkerhet", "category": "Teknologi & innovation", "desc": "Attacker, hot och försvar." },
+  { "id": "tech_patent", "name": "Patent & genombrott", "category": "Teknologi & innovation", "desc": "Nya patent och teknikinnovationer." },
+
+  { "id": "soc_freedom", "name": "Religionsfrihet & mångfald", "category": "Socialt liv & kultur", "desc": "Kulturell och religiös frihet." },
+  { "id": "soc_equality", "name": "Jämställdhet", "category": "Socialt liv & kultur", "desc": "Köns- och HBTQ+-rättigheter." },
+  { "id": "soc_civil", "name": "Civilsamhälle", "category": "Socialt liv & kultur", "desc": "Volontärinsatser och ideella organisationer." },
+  { "id": "soc_culture", "name": "Kultur & språk", "category": "Socialt liv & kultur", "desc": "Kulturproduktion och språkbevarande." },
+  { "id": "soc_cohesion", "name": "Gemenskap", "category": "Socialt liv & kultur", "desc": "Social sammanhållning och tillit." }
+]

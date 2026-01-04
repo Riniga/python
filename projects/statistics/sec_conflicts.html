@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="utf-8" />
+  <title>Väpnade konflikter – 12 månader & årsvis</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1"></script>
+  <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+  <style>
+    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif; margin: 24px; }
+    .wrap { max-width: 980px; margin: 0 auto; }
+    header { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+    input[type="file"] { padding: 8px; }
+    .meta { color: #555; font-size: 0.9rem; margin-top: 4px; }
+    canvas { width: 100%; height: 450px; margin-top: 12px; }
+    .legend { margin-top: 6px; color: #333; font-size: 0.95rem; }
+    h2 { margin-top: 28px; margin-bottom: 8px; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <h1 style="margin:0;">Väpnade konflikter</h1>
+      <input id="file" type="file" accept=".csv" />
+    </header>
+    <div class="meta">
+      Läs in <code>sec_conflicts.csv</code>. Vi ritar två grafer:
+      <ul>
+        <li><b>Månadsvis</b>: senaste 12 fulla månaderna</li>
+        <li><b>Årsvis</b>: all data i filen aggregerad per år (utan dubbelräkning)</li>
+      </ul>
+    </div>
+
+    <h2>Månadsvis – senaste 12 månaderna</h2>
+    <div class="legend">Vänster Y: <b>Antal konflikter</b> • Höger Y: <b>Antal döda (summa)</b></div>
+    <canvas id="chartMonthly"></canvas>
+
+    <h2>Årsvis – aggregerat</h2>
+    <div class="legend">Vänster Y: <b>Antal konflikter</b> • Höger Y: <b>Antal döda (summa)</b></div>
+    <canvas id="chartYearly"></canvas>
+  </div>
+
+  <script>
+    const fileInput = document.getElementById('file');
+    const ctxMonthly = document.getElementById('chartMonthly').getContext('2d');
+    const ctxYearly  = document.getElementById('chartYearly').getContext('2d');
+    let chartMonthly, chartYearly;
+
+    // --- Utils ---
+    const toInt = (v) => {
+      const n = parseInt(String(v ?? '').trim(), 10);
+      return Number.isFinite(n) ? n : 0;
+    };
+
+    function labelToDate(lbl) { // "YYYY-MM" -> Date
+      const [y, m] = String(lbl).split('-').map(Number);
+      if (!y || !m) return new Date(0);
+      return new Date(y, m - 1, 1);
+    }
+
+    function yearFromLabel(lbl, periodType) {
+      if (!lbl) return null;
+      if (String(periodType).toLowerCase() === 'year') {
+        const y = parseInt(lbl, 10);
+        return Number.isFinite(y) ? y : null;
+      }
+      // month ("YYYY-MM")
+      const y = parseInt(lbl.slice(0, 4), 10);
+      return Number.isFinite(y) ? y : null;
+    }
+
+    function makeChart(targetCtx, labels, conflicts, deaths) {
+      return new Chart(targetCtx, {
+        type: 'line',
+        data: {
+          labels,
+          datasets: [
+            {
+              label: 'Antal konflikter',
+              data: conflicts,
+              tension: 0.2,
+              yAxisID: 'yLeft',
+              pointRadius: 3
+            },
+            {
+              label: 'Antal döda (summa)',
+              data: deaths,
+              tension: 0.2,
+              yAxisID: 'yRight',
+              pointRadius: 3
+            }
+          ]
+        },
+        options: {
+          responsive: true,
+          interaction: { mode: 'index', intersect: false },
+          plugins: {
+            tooltip: {
+              callbacks: {
+                label: (ctx) => `${ctx.dataset.label}: ${ctx.parsed.y.toLocaleString('sv-SE')}`
+              }
+            },
+            legend: { position: 'top' }
+          },
+          scales: {
+            yLeft: { type: 'linear', position: 'left', title: { display: true, text: 'Antal konflikter' }, ticks: { precision: 0 } },
+            yRight: { type: 'linear', position: 'right', title: { display: true, text: 'Antal döda (summa)' }, grid: { drawOnChartArea: false },
+                      ticks: { callback: v => Number(v).toLocaleString('sv-SE') } },
+            x: { title: { display: true, text: 'Tidsperiod' } }
+          }
+        }
+      });
+    }
+
+    // --- Huvudflöde ---
+    fileInput.addEventListener('change', (e) => {
+      const file = e.target.files?.[0];
+      if (!file) return;
+
+      Papa.parse(file, {
+        header: true,
+        skipEmptyLines: true,
+        complete: (res) => {
+          const rows = res.data;
+
+          // ----- MÅNAD: senaste 12 månader -----
+          const monthlyRows = rows
+            .filter(r => String(r.period_type).trim().toLowerCase() === 'month')
+            .filter(r => r.period_label && /^\d{4}-\d{2}$/.test(r.period_label))
+            .sort((a, b) => labelToDate(a.period_label) - labelToDate(b.period_label));
+
+          const last12 = monthlyRows.slice(-12);
+          const mLabels = last12.map(r => r.period_label);
+          const mConflicts = last12.map(r => toInt(r.conflicts_count));
+          const mDeaths = last12.map(r => toInt(r.deaths_best_sum));
+
+          if (chartMonthly) chartMonthly.destroy();
+          chartMonthly = makeChart(ctxMonthly, mLabels, mConflicts, mDeaths);
+          chartMonthly.options.plugins.title = { display: true, text: 'Väpnade konflikter – senaste 12 fulla månaderna' };
+          chartMonthly.update();
+
+          // ----- ÅR: aggregerat per år (undvik dubbelräkning) -----
+          // 1) Summera alla månadsrader per år
+          const yearAggFromMonths = {};
+          const hasMonthYear = new Set();
+          for (const r of monthlyRows) {
+            const y = yearFromLabel(r.period_label, 'month');
+            if (!y) continue;
+            hasMonthYear.add(y);
+            yearAggFromMonths[y] ??= { conflictsSum: 0, deathsSum: 0, months: 0 };
+            yearAggFromMonths[y].conflictsSum += toInt(r.conflicts_count);
+            yearAggFromMonths[y].deathsSum    += toInt(r.deaths_best_sum);
+            yearAggFromMonths[y].months       += 1;
+          }
+
+          // 2) För år som saknar månadsposter, använd års-rader
+          const yearlyRows = rows
+            .filter(r => String(r.period_type).trim().toLowerCase() === 'year')
+            .filter(r => r.period_label && /^\d{4}$/.test(r.period_label));
+
+          const yearAgg = { ...yearAggFromMonths };
+          for (const r of yearlyRows) {
+            const y = yearFromLabel(r.period_label, 'year');
+            if (!y || hasMonthYear.has(y)) continue; // hoppa över år där vi har månadssummering
+           yearAgg[y] ??= { conflictsSum: 0, deathsSum: 0, months: 12 };
+           yearAgg[y].conflictsSum += toInt(r.conflicts_count);
+           yearAgg[y].deathsSum    += toInt(r.deaths_best_sum);
+          }
+
+          // Sortera år och bygg serier
+          const yLabels = Object.keys(yearAgg).map(x => parseInt(x, 10)).sort((a,b)=>a-b).map(String);
+          const yConflicts = yLabels.map(y => {
+            const row = yearAgg[parseInt(y,10)];
+            const m = row.months || 1;
+            return +(row.conflictsSum / m).toFixed(2);
+          });
+          const yDeaths = yLabels.map(y => {
+            const row = yearAgg[parseInt(y,10)];
+            const m = row.months || 1;
+            return +(row.deathsSum / m).toFixed(2);
+          });
+
+          if (chartYearly) chartYearly.destroy();
+          chartYearly = makeChart(ctxYearly, yLabels, yConflicts, yDeaths);
+          chartYearly.options.plugins.title = { display: true, text: 'Väpnade konflikter - årsvis (aggregerat)' };
+          chartYearly.scales.x.title.text = 'År';
+          chartYearly.update();
+        },
+        error: (err) => {
+          alert('Fel vid läsning av CSV: ' + err.message);
+        }
+      });
+    });
+  </script>
+</body>
+</html>

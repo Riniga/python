@@ -1,0 +1,43 @@
+{
+  "env_temp": ["year", "five_years", "ten_years", "historic", "forecast"],
+  "env_forest": ["year", "five_years", "ten_years", "historic"],
+  "env_pollution": ["month", "year", "five_years"],
+  "env_energy": ["month", "year", "five_years", "forecast"],
+  "env_disaster": ["live", "week", "month", "year"],
+
+  "hum_health": ["year", "five_years", "ten_years"],
+  "hum_edu": ["year", "five_years", "ten_years"],
+  "hum_mental": ["year"],
+  "hum_basic": ["year", "five_years"],
+  "hum_pop": ["year", "five_years", "ten_years", "historic"],
+
+  "eco_gdp": ["month", "year", "five_years", "forecast"],
+  "eco_wealth": ["year", "five_years", "ten_years"],
+  "eco_poverty": ["year", "five_years", "ten_years"],
+  "eco_innov": ["year", "five_years", "ten_years"],
+  "eco_trade": ["month", "year", "five_years"],
+
+  "pol_democracy": ["year", "five_years", "ten_years"],
+  "pol_rights": ["year", "five_years", "ten_years"],
+  "pol_trust": ["year", "five_years"],
+  "pol_risk": ["month", "year", "five_years"],
+  "pol_transparency": ["year", "five_years"],
+
+  "sec_conflicts": ["live", "week", "month", "year"],
+  "sec_military": ["year", "five_years", "ten_years"],
+  "sec_refugees": ["month", "year", "five_years"],
+  "sec_peaceindex": ["year", "five_years", "ten_years"],
+  "sec_terror": ["live", "week", "month"],
+
+  "tech_internet": ["year", "five_years", "ten_years"],
+  "tech_ai": ["year", "five_years", "forecast"],
+  "tech_research": ["year", "five_years", "ten_years"],
+  "tech_cyber": ["live", "week", "month", "year"],
+  "tech_patent": ["year", "five_years", "ten_years"],
+
+  "soc_freedom": ["year", "five_years", "ten_years"],
+  "soc_equality": ["year", "five_years", "ten_years"],
+  "soc_civil": ["year", "five_years"],
+  "soc_culture": ["year", "five_years", "ten_years"],
+  "soc_cohesion": ["year", "five_years"]
+}

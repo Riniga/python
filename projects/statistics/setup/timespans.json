@@ -1,0 +1,10 @@
+[
+  { "id": "live", "name": "Live / 24h", "desc": "Senaste dygnet – realtidsdata och nyheter." },
+  { "id": "week", "name": "Senaste veckan", "desc": "Korttidsförändringar och snabba trender." },
+  { "id": "month", "name": "Senaste månaden", "desc": "Medelfrekvent förändring, månadstrender." },
+  { "id": "year", "name": "Senaste året", "desc": "Standard för årlig jämförelse." },
+  { "id": "five_years", "name": "Senaste 5 åren", "desc": "Strukturella trender." },
+  { "id": "ten_years", "name": "Senaste 10 åren", "desc": "Långsiktig utveckling." },
+  { "id": "historic", "name": "Historiskt (sedan 1950/1990)", "desc": "Djupare historiska data och jämförelser." },
+  { "id": "forecast", "name": "Prognos (framtid)", "desc": "Modellerade framtida värden." }
+]
